@@ -23,6 +23,7 @@ public class PropondoLanceSteps {
         leilao = new Leilao("Tablet Sansumg");
     }
 
+    //v3.4  
     @After
     public void tearDown(){
         System.out.println("after");
