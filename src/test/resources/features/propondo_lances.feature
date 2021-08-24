@@ -20,3 +20,11 @@ Feature: Propondo Lances ao leilao
       | valor | nomeUsuario |
       |     0 | Felipe      |
       |    -1 | Lidiane     |
+
+  Scenario: Propondo lances com usuario repetido
+    Given dois lances
+      | valor | nomeUsuario |
+      |  10.0 | Felipe      |
+      |  15.0 | Felipe      |
+    When propoe varios lances ao leilao
+    Then o segundo lance nao eh aceito
