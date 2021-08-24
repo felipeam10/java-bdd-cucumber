@@ -68,13 +68,16 @@ public class PropondoLanceSteps {
     }
 
 
-    @Given("um lance invalido de {double} reais")
-    public void um_lance_invalido_de_reais(Double valor) {
-        System.out.println(valor);
+
+
+    @Given("um lance invalido de {double} reais e do usuario {string}")
+    public void um_lance_invalido_de_reais(Double valor, String nomeUsuario) {
+        System.out.println(nomeUsuario);
+        this.lance = new Lance(new BigDecimal(valor));
     }
 
     @Then("o lance nao eh aceito")
     public void o_lance_nao_eh_aceito() {
-        
+        Assert.assertEquals(0, leilao.getLances().size());
     }
 }

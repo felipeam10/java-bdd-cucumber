@@ -12,11 +12,11 @@ Feature: Propondo Lances ao leilao
     Then os lances sao aceitos
 
   Scenario Outline: : Propondo um lance invalido
-    Given um lance invalido de <valor> reais
-    When propoe um leilao
+    Given um lance invalido de <valor> reais e do usuario '<nomeUsuario>'
+    When propoe ao leilao
     Then o lance nao eh aceito
 
     Examples:
-      | valor |
-      |     0 |
-      |    -1 |
+      | valor | nomeUsuario |
+      |     0 | Felipe      |
+      |    -1 | Lidiane     |
